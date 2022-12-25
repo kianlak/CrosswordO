@@ -1,0 +1,102 @@
+<html>
+<head>
+  <style>
+    /* Set the size of the crossword board */
+    .crossword {
+      width: 500px;
+      height: 500px;
+    }
+
+    black-box {
+    background-color: black;
+    color: black;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    }
+
+    /* Set the style for the cells in the crossword board */
+    .crossword td {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+    }
+
+    /* Set the style for the index numbers */
+    .crossword td div {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .square {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <table class="crossword">
+    <tr>
+      <td><div>1</div><input id="square" type="text" maxlength="1" id="cell1" oninput="if (this.value && this.value !== ' ' && this.value !== '\b') { moveToNext(this); } capitalize(this)"></td>
+      <td><div>2</div><input type="text" maxlength="1" id="cell2" oninput="if (this.value && this.value !== ' ' && this.value !== '\b') { moveToNext(this); } capitalize(this)"></td>
+      <td>
+        <div class="black-box" onclick="moveToNext(this.previousElementSibling)">
+          &nbsp;
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><div>4</div><input type="text" maxlength="1" id="cell4" oninput="if (this.value && this.value !== ' ' && this.value !== '\b') { moveToNext(this); } capitalize(this)"></td>
+      <td><div>5</div><input type="text" maxlength="1" id="cell5" oninput="if (this.value && this.value !== ' ' && this.value !== '\b') { moveToNext(this); } capitalize(this)"></td>
+      <td><div>6</div><input type="text" maxlength="1" id="cell6" oninput="if (this.value && this.value !== ' ' && this.value !== '\b') { moveToNext(this); } capitalize(this)"></td>
+    </tr>
+    <tr>
+      <td><div>7</div><input type="text" maxlength="1" id="cell7" oninput="if (this.value && this.value !== ' ' && this.value !== '\b') { moveToNext(this); } capitalize(this)"></td>
+      <td><div>8</div><input type="text" maxlength="1" id="cell8" oninput="if (this.value && this.value !== ' ' && this.value !== '\b') { moveToNext(this); } capitalize(this)"></td>
+      <td><div>9</div><input type="text" maxlength="1" id="cell9" oninput="if (this.value && this.value !== ' ' && this.value !== '\b') { moveToNext(this); } capitalize(this)"></td>
+    </tr>
+  </table>
+  <button id="across-button" onclick="setMode('across')">Across</button>
+  <button id="down-button" onclick="setMode('down')">Down</button>
+  
+
+  <script>
+    var mode = 'across';
+    
+    function moveToNext(input) {
+  if (mode === 'across') {
+    var next = input.id.replace(/\d+/, function(match) {
+      return parseInt(match, 10) + 1;
+    });
+    var nextInput = document.getElementById(next);
+    if (nextInput) {
+      nextInput.focus();
+    }
+  } else if (mode === 'down') {
+    var currentIndex = parseInt(input.id.replace(/\D/g, ''), 10);
+    var nextIndex = currentIndex + 3;
+    var next = 'cell' + nextIndex;
+    var nextInput = document.getElementById(next);
+    if (nextInput) {
+      nextInput.focus();
+    }
+  }
+}
+    
+    function setMode(newMode) {
+      mode = newMode;
+    }
+    
+    function capitalize(input) {
+      input.value = input.value.toUpperCase();
+    }
+    </script>
+
+</body>
+</html>

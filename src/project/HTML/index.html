@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CrosswordO</title>
+
+
+        <!-- Data Scripts -->
+        <script src="./../Data/words.js"></script>
+        <script src="./../Data/words_index.js"></script>
+        <script src="./../Data/json_data.js"></script>
+    </head>
+
+    <body>
+        <!-- Imports -->
+
+        <script src="./../JavaScript/index.js">
+            import { crosswordCreation } from "./../JavaScript/crossword.js"
+        </script>
+        <script src="./../JavaScript/crossword.js">
+            import { WORDS } 
+            from "./../Data/words.js"
+
+            import { checkProgress, randomDirectionSelection} 
+            from "./../JavaScript/crossword_util.js"
+
+            import { getRandomWord, getWordsJSONData, getSameLengthWord, createWordJSONData, findWordToFit } 
+            from "./../JavaScript/crossword_words_util.js"
+        </script>
+
+        <script src="./../JavaScript/crossword_util.js">
+            //import { crosswordCreation } from "./../JavaScript/crossword.js"
+        </script>
+
+        <script src="./../JavaScript/crossword_words_util.js">
+            import { WORDS } from "./../Data/words.js"
+            import { wordJSONData } from "./../Data/json_data.js"
+        </script>
+
+        <input type="button" id="breadthSelection" value="15x15" onclick="createNewCrosswordPuzzle(15)">
+        <input type="button" id="breadthSelection" value="21x21" onclick="createNewCrosswordPuzzle(21)">
+
+
+
+
+
+
+
+
+        
+
+        <style>
+          table {
+          border-collapse: collapse;
+          width: 1%;
+          }
+
+          th, td {
+          text-align: left;
+          padding: 8px;
+          }
+
+          th {
+          background-color: #4caf50;
+          color: white;
+          }
+          
+      </style>
+
+        <table border="1">
+            <tbody id="grid">
+            </tbody>
+          </table>
+          
+          <!-- <script>
+            const gridData = [    [1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]
+            ];
+          
+            const grid = document.getElementById('grid');
+          
+            for (let i = 0; i < gridData.length; i++) {
+              const row = gridData[i];
+              const tr = document.createElement('tr');
+          
+              for (let j = 0; j < row.length; j++) {
+                const cell = row[j];
+                const td = document.createElement('td');
+                td.textContent = cell;
+                tr.appendChild(td);
+              }
+          
+              grid.appendChild(tr);
+            }
+          </script> -->
+    </body>
+</html>
