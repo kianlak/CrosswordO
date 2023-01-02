@@ -2,8 +2,8 @@
  * @param {object} crossword The crossword to be modified
  */
 function firstStepIntersectionMode(crossword) {
-  let word1 = getRandomAcrossMiddleWord(crossword);
-  let word2 = getRandomDownMiddleWord(crossword, word1);
+  let word1 = getRandomCenterIntersectionAcrossWord(crossword);
+  let word2 = getRandomCenterIntersectionDownWord(crossword, word1);
   let startingBox;
 
   startingBox = (crossword.sideLength - word1.length) / 2;

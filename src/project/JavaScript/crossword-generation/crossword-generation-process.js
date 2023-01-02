@@ -1,3 +1,6 @@
+/** Checks progress and sends crossword to be updated depending on progress
+ * @param {object} crossword The crossword instance being used 
+ */
 function workOnCrossword(crossword) {
   if(crossword.progress == 0) { 
     firstStepCrossword(crossword);
@@ -13,7 +16,6 @@ function workOnCrossword(crossword) {
 
   Create fill rest of row and rest of column functions
 */
-
 function firstStepCrossword(crossword) {
   if(crosswordCenterIsBlackBox()) {
     let mode = randomlySelectCenterBlackBoxMode();

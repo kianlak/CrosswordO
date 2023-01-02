@@ -1,4 +1,4 @@
-function getRandomAcrossMiddleWord(crossword) {
+function getRandomCenterIntersectionAcrossWord(crossword) {
   let wordAcross;
 
   while(wordAcross == undefined) {
@@ -27,7 +27,7 @@ function getRandomAcrossMiddleWord(crossword) {
   }
 }
 
-function getRandomDownMiddleWord(crossword, wordAcross) {
+function getRandomCenterIntersectionDownWord(crossword, wordAcross) {
   let wordDown;
 
   while(wordDown == undefined) {
