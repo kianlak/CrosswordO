@@ -2,7 +2,7 @@ function startCrosswordGenerationProcess(length) {
 	const crossword = new Crossword(length);
 
 	while(crossword.progress != 1) {
-		createCrossword(crossword);
+		workOnCrossword(crossword);
 
 		crossword.setProgress(1);
 	}

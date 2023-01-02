@@ -1,4 +1,4 @@
-function createCrossword(crossword) {
+function workOnCrossword(crossword) {
   if(crossword.progress == 0) { 
     firstStepCrossword(crossword);
 
@@ -44,5 +44,11 @@ function firstStepCrossword(crossword) {
     else {
       //WIP
     }
+  }
+
+  function crosswordCenterIsBlackBox() {
+    let percentChance = Math.ceil(Math.random() * 100);
+    
+    return percentChance <= 10 ? true : false;
   }
 }
