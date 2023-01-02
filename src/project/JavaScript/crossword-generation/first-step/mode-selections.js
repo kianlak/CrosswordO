@@ -23,16 +23,22 @@ function randomlySelectCenterBlackBoxMode() {
   let percentChance = Math.ceil(Math.random() * 100);
 
   /** Percent Chances
-   * case1: 90% (Top, Bottom, Left, and Right are filled)
-   * case2: 5% (Vertical to the center column an across word is inserted)
-   * case3: 5% (Horizontal to the center row a down word is inserted)
+   * case1: 70% (Top, Bottom, Left, and Right are filled)
+   * case2: 10% (Across filled in the center row)
+   * case3: 10% (Down filled in the center column)
+   * case4: 5% (Vertical to the center column an across word is inserted)
+   * case5: 5% (Horizontal to the center row a down word is inserted)
    */
   switch(true) {
-    case(percentChance <= 90):                        // Case 1
+    case(percentChance <= 70):                        // Case 1
       return centerBlackBoxMode.FILLEDAROUNDCENTER;
-    case(percentChance >= 91 && percentChance <= 95): // Case 2
+    case(percentChance >= 71 && percentChance <= 80): // Case 2
+      return centerBlackBoxMode.FILLEDACROSS;
+    case(percentChance >= 81 && percentChance <= 90): // Case 3
+      return centerBlackBoxMode.FILLEDDOWN;
+    case(percentChance >= 91 && percentChance <= 95): // Case 4
       return centerBlackBoxMode.ACROSSVERTICALTOCENTER;
-    case(percentChance >= 96):                        // Case 3
+    case(percentChance >= 96):                        // Case 5
       return centerBlackBoxMode.DOWNHORIZONTALTOCENTER;
   }
 }

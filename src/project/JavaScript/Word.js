@@ -1,8 +1,10 @@
 class Word {
-  constructor(word) {
-    this.word = word;
+  constructor(word, row, column, mode) {
+    this.word = word.toUpperCase();
     this.definition = getDefinition(word);
-    this.startingBox = [0, 0];
+    this.direciton = mode;
+    this.clueNumber = 0;
+    this.startingBox = [row, column];
   }
 
   /* SETTERS */
@@ -10,7 +12,12 @@ class Word {
     this.definition = definition;
   }
 
-  setStartingBox(box) {
-    this.startingBox = box;
+  setStartingBox(row, column) {
+    this.startingBox[0] = row;
+    this.startingBox[1] = column;
+  }
+
+  setClueNumber(clueNumber) {
+    this.clueNumber = clueNumber;
   }
 }

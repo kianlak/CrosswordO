@@ -7,6 +7,7 @@ class Crossword {
 		this.progress = 0;
 		this.grid = new Array(this.sideLength).fill().map(() => Array(this.sideLength).fill(" "));
 		this.directionGrid = new Array(this.sideLength).fill().map(() => Array(this.sideLength).fill(insertMode.NONE));
+		this.words = [];
   }
 	
 	/* METHODS */
@@ -24,6 +25,17 @@ class Crossword {
 
 		this.setProgress(filledBoxes / this.area);
 		return this.progress;
+	}
+
+	//FINSISH THIS LATER
+	// sortClueNumbers() {
+	// 	let clueNumber = 1;
+
+	// 	this.words.sort((word1, word2) => word1.startingBox[1] - word2.startingBox[1]);
+	// }
+
+	addToWords(word, row, column, mode) {
+		this.words.push(new Word(word, row, column, mode));
 	}
 
 	/* SETTERS */

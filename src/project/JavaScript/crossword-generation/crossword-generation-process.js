@@ -26,6 +26,12 @@ function firstStepCrossword(crossword) {
     if(mode == centerBlackBoxMode.FILLEDAROUNDCENTER) {
       //WIP
     }
+    else if(mode == centerBlackBoxMode.FILLEDACROSS) {
+      // WIP
+    }
+    else if(mode == centerBlackBoxMode.FILLEDDOWN) {
+      // WIP
+    }
     else if(mode == centerBlackBoxMode.ACROSSVERTICALTOCENTER) {
       //WIP
     }
@@ -39,18 +45,15 @@ function firstStepCrossword(crossword) {
     // WIP
     if(mode == noCenterBlackBoxMode.INTERSECTION) {
       firstStepIntersectionMode(crossword);
+      console.log("INTERSECTION")
     }
     else if(mode == noCenterBlackBoxMode.ACROSSONLY) {
-      //WIP
+      firstStepAcrossOnlyMode(crossword);
+      console.log("ACROSS ONLY")
     }
     else {
-      //WIP
+      firstStepDownOnlyMode(crossword);
+      console.log("DOWN ONLY")
     }
-  }
-
-  function crosswordCenterIsBlackBox() {
-    let percentChance = Math.ceil(Math.random() * 100);
-    
-    return percentChance <= 10 ? true : false;
   }
 }
