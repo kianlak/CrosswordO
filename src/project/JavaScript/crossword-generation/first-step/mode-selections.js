@@ -49,11 +49,11 @@ function randomlySelectNoCenterBlackBoxMode() {
    * case3: 10% (Center only has a down word)
    */
   switch(true) {
-    case(percentChance <= 80):                          
+    case(percentChance <= 80):                        // Case 1         
       return noCenterBlackBoxMode.INTERSECTION;
-    case(percentChance >= 81 && percentChance <= 90):
+    case(percentChance >= 81 && percentChance <= 90): // Case 2
       return noCenterBlackBoxMode.ACROSSONLY;
-    case(percentChance >= 91):
+    case(percentChance >= 91):                        // Case 3
       return noCenterBlackBoxMode.DOWNONLY;
   }
 }

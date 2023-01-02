@@ -1,3 +1,6 @@
+/** Implements the intersection mode onto the crossword
+ * @param {object} crossword The crossword to be modified
+ */
 function firstStepIntersectionMode(crossword) {
   let word1 = getRandomAcrossMiddleWord(crossword);
   let word2 = getRandomDownMiddleWord(crossword, word1);
