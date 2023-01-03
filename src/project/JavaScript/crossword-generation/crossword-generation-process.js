@@ -9,36 +9,25 @@ function workOnCrossword(crossword) {
   }
 }
 
-/* TO DO
-  Put for loops into own functions
-
-  Create random instances of middle and non middle
-
-  Create fill rest of row and rest of column functions
-*/
 function firstStepCrossword(crossword) {
   if(crosswordCenterIsBlackBox()) {
     let mode = randomlySelectCenterBlackBoxMode();
 
     crossword.setElementIntoGrid(crossword.halfPoint, crossword.halfPoint, "#");
 
-    // WIP
     if(mode == centerBlackBoxMode.FILLEDAROUNDCENTER) {
       firstStepFilledAroundCenter(crossword);
-      console.log("FILLEDAROUNDCENTER")
+      console.log("FILLED AROUND CENTER")
     }
     else if(mode == centerBlackBoxMode.FILLEDACROSS) {
-      // WIP
+      firstStepFilledAcrossCenter(crossword);
+      console.log("FILLED ACROSS CENTER");  
     }
     else if(mode == centerBlackBoxMode.FILLEDDOWN) {
-      // WIP
+      firstStepFilledDownCenter(crossword);
+      console.log("FILLED DOWN CENTER");  
     }
-    else if(mode == centerBlackBoxMode.ACROSSVERTICALTOCENTER) {
-      //WIP
-    }
-    else {
-      //WIP
-    }
+
   }
   else {
     let mode = randomlySelectNoCenterBlackBoxMode();
