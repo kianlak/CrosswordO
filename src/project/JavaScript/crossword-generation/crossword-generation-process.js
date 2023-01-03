@@ -24,7 +24,8 @@ function firstStepCrossword(crossword) {
 
     // WIP
     if(mode == centerBlackBoxMode.FILLEDAROUNDCENTER) {
-      //WIP
+      firstStepFilledAroundCenter(crossword);
+      console.log("FILLEDAROUNDCENTER")
     }
     else if(mode == centerBlackBoxMode.FILLEDACROSS) {
       // WIP
@@ -42,7 +43,6 @@ function firstStepCrossword(crossword) {
   else {
     let mode = randomlySelectNoCenterBlackBoxMode();
 
-    // WIP
     if(mode == noCenterBlackBoxMode.INTERSECTION) {
       firstStepIntersectionMode(crossword);
       console.log("INTERSECTION")

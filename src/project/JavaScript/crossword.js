@@ -30,7 +30,6 @@ class Crossword {
 	//FINSISH THIS LATER
 	// sortClueNumbers() {
 	// 	let clueNumber = 1;
-
 	// 	this.words.sort((word1, word2) => word1.startingBox[1] - word2.startingBox[1]);
 	// }
 
