@@ -4,10 +4,16 @@
 function startCrosswordGenerationProcess(length) {
 	const crossword = new Crossword(length);
 
+	let i = 0;
+
 	while(crossword.progress != 1) {
 		workOnCrossword(crossword);
 
-		crossword.setProgress(1);
+		if(i == 1) {
+			crossword.setProgress(1);
+		}
+
+		i++;
 	}
 
 	console.log(crossword);

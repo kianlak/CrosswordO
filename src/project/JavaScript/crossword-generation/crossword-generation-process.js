@@ -7,6 +7,11 @@ function workOnCrossword(crossword) {
 
     crossword.updateProgress();
   }
+  else {
+    fillInCrossword(crossword);
+
+    crossword.updateProgress();
+  }
 }
 
 function firstStepCrossword(crossword) {
@@ -17,32 +22,29 @@ function firstStepCrossword(crossword) {
 
     if(mode == centerBlackBoxMode.FILLEDAROUNDCENTER) {
       firstStepFilledAroundCenter(crossword);
-      console.log("FILLED AROUND CENTER")
     }
     else if(mode == centerBlackBoxMode.FILLEDACROSS) {
       firstStepFilledAcrossCenter(crossword);
-      console.log("FILLED ACROSS CENTER");  
     }
     else if(mode == centerBlackBoxMode.FILLEDDOWN) {
       firstStepFilledDownCenter(crossword);
-      console.log("FILLED DOWN CENTER");  
     }
-
   }
   else {
     let mode = randomlySelectNoCenterBlackBoxMode();
 
     if(mode == noCenterBlackBoxMode.INTERSECTION) {
       firstStepIntersectionMode(crossword);
-      console.log("INTERSECTION")
     }
     else if(mode == noCenterBlackBoxMode.ACROSSONLY) {
       firstStepAcrossOnlyMode(crossword);
-      console.log("ACROSS ONLY")
     }
     else {
       firstStepDownOnlyMode(crossword);
-      console.log("DOWN ONLY")
     }
   }
+}
+
+function fillInCrossword(crossword) {
+  
 }

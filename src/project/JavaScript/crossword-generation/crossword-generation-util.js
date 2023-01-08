@@ -34,3 +34,16 @@ function crosswordCenterIsBlackBox() {
   */
   return percentChance <= 10 ? true : false;
 }
+
+/** Determines whether crossword will have have insertion mode ACROSS or DOWN
+ * @returns {enum} Insertion mode selected
+ */
+function randomlySelectInsertionMode() {
+  let percentChance = Math.floor(Math.random() * 2);
+  
+  /* Percent Chances
+  * ACROSS: 50%
+  * DOWN: 50%
+  */
+  return percentChance == 0 ? insertMode.ACROSS : insertMode.DOWN;
+}

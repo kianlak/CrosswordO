@@ -47,7 +47,7 @@ function firstStepWordsInsertIntoCrossword(crossword, word1, word2, row, column,
     insertCenterAcrossWordIntoCrossword(crossword, word1, row, column);
 
     [row, column] = symmetricalCoordinates(crossword, row, column);
-    insertCenterAcrossWordIntoCrossword(crossword, word2, row, column - word1.length + 1);
+    insertCenterAcrossWordIntoCrossword(crossword, word2, row, (column - word1.length + 1));
 
     if((column + 1) < crossword.sideLength) {
       insertBlackBoxes(crossword, row, (column + 1));
