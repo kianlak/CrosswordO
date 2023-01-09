@@ -9,7 +9,7 @@ function startCrosswordGenerationProcess(length) {
 	while(crossword.progress != 1) {
 		workOnCrossword(crossword);
 
-		if(i == 1) {
+		if(i == 10) {
 			crossword.setProgress(1);
 		}
 

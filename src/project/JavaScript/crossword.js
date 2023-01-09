@@ -17,7 +17,7 @@ class Crossword {
 
 		for(const row of this.grid) {
 			for(const element of row) {
-				if(element != '') {
+				if(element != ' ') {
 					filledBoxes++;
 				}
 			}

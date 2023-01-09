@@ -27,3 +27,13 @@ const centerBlackBoxMode = {
   FILLEDACROSS: 1,
   FILLEDDOWN: 2
 };
+
+// Crossword patterns for filling in the rest of the crossword
+const fillInMode = {
+  TOPTOBOTTOM: 0,
+  LEFTTORIGHT: 1,
+  REVERSETOPTOBOTTOM: 2,
+  REVERSELEFTTORIGHT: 3,
+  RANDOMACROSS: 4,
+  RANDOMDOWN: 5
+};

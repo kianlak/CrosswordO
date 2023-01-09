@@ -46,5 +46,26 @@ function firstStepCrossword(crossword) {
 }
 
 function fillInCrossword(crossword) {
-  
+  let mode = randomlySelectFillInMode();
+
+  if(mode == fillInMode.TOPTOBOTTOM) {
+    fillInTopToBottom(crossword);
+  }
+
+  crossword.updateProgress(1)
+  // else if(mode == fillInMode.LEFTTORIGHT) {
+  //   fillInLeftToRight(crossword);
+  // }
+  // else if(mode == fillInMode.REVERSETOPTOBOTTOM) {
+  //   fillInReverseTopToBottom(crossword);
+  // }
+  // else if(mode == fillInMode.REVERSELEFTTORIGHT) {
+  //   fillInReverseLeftToRight(crossword);
+  // }
+  // else if(mode == fillInMode.RANDOMACROSS) {
+  //   fillInRandomAcross(crossword);
+  // }
+  // else {
+  //   fillInRandomDown(crossword);
+  // }
 }
