@@ -1,6 +1,5 @@
 function fillInTopToBottom(crossword) {
-  let possibleWords = {};
-  let data = [];
+  let segmentCollection = [];
 
   for(let column = 0; column < crossword.sideLength; column++) {
     let rowList = [];
@@ -9,12 +8,10 @@ function fillInTopToBottom(crossword) {
       rowList.push(crossword.grid[row][column]);
     }
 
-    data.push(possibleDownWords(crossword, rowList, column, insertMode.DOWN));
-  }
+    segmentCollection.push(downWordsSegmenting(crossword, rowList, column, insertMode.DOWN));
 
-  console.log(data);
-
-  for(let column = 0; column < crossword.sideLength; column++) {
-    
+    if(segmentCollection[segmentCollection.length - 1] != undefined) {
+      processSegments(crossword, segmentCollection[segmentCollection.length - 1], column);
+    }
   }
 }
