@@ -65,25 +65,19 @@ function randomlySelectFillInMode() {
   let percentChance = Math.ceil(Math.random() * 100);
 
   /** Percent Chances
-   * case1: 10% (Top to bottom pattern)
-   * case2: 10% (Left to right pattern)
-   * case3: 10% (Reversed Top to bottom pattern)
-   * case4: 10% (Reversed Left to right pattern)
-   * case5: 30% (Random coordinate for across)
-   * case6: 30% (Random coordinate for Down)
+   * case1: 15% (Top to bottom pattern)
+   * case2: 15% (Left to right pattern)
+   * case3: 35% (Random coordinate for across)
+   * case4: 35% (Random coordinate for Down)
    */
   switch(true) {
-    case(percentChance <= 10):                        // Case 1         
+    case(percentChance <= 15):                        // Case 1         
       return fillInMode.TOPTOBOTTOM;
-    case(percentChance >= 11 && percentChance <= 20): // Case 2
+    case(percentChance >= 16 && percentChance <= 30): // Case 2
       return fillInMode.LEFTTORIGHT;
-    case(percentChance >= 21 && percentChance <= 30): // Case 3
-      return fillInMode.REVERSETOPTOBOTTOM;
-    case(percentChance >= 31 && percentChance <= 40): // Case 4
-      return fillInMode.REVERSELEFTTORIGHT;
-    case(percentChance >= 41 && percentChance <= 70): // Case 5
+    case(percentChance >= 31 && percentChance <= 65): // Case 3
       return fillInMode.RANDOMACROSS;
-    case(percentChance >= 71):                        // Case 6
+    case(percentChance >= 66):                        // Case 4
       return fillInMode.RANDOMDOWN;
   }
 }

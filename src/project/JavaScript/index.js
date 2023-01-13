@@ -9,11 +9,13 @@ function startCrosswordGenerationProcess(length) {
 	while(crossword.progress != 1) {
 		workOnCrossword(crossword);
 
-		if(i == 3) {
-			crossword.setProgress(1);
-		}
+		console.log(crossword.progress)
 
-		i++;
+		// if(i == 10) {
+		// 	crossword.setProgress(1);
+		// }
+
+		// i++;
 	}
 
 	console.log(crossword);

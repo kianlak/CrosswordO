@@ -12,7 +12,7 @@ function getWord(index) {
 */
 function getDefinition(word) {
   for(const index in DICTIONARY) {
-    if(getWord(index) == word) {
+    if(getWord(index).toLowerCase() == word.toLowerCase()) {
       return DICTIONARY[index].match(/:\s*(.+)/)[1];
     }
   }
