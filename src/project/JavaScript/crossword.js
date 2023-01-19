@@ -27,6 +27,16 @@ class Crossword {
 		return this.progress;
 	}
 
+	finishFillIn() {
+		for(let row = 0; row < this.sideLength; row++) {
+			for(let i = 0; i < this.sideLength; i++) {
+				if(this.grid[row][i] == " " || this.grid[row][i] == "#") {
+					this.setElementIntoGrid(row, i, "█");
+				}
+			}
+		}
+	}
+
 	//FINSISH THIS LATER
 	// sortClueNumbers() {
 	// 	let clueNumber = 1;

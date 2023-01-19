@@ -16,6 +16,10 @@ function continueTraversal(crossword, row, column, mode) {
       return false;
     }
 
+    if(column - 1 >= 0 && (crossword.directionGrid[row][column - 1] == "AD" || crossword.directionGrid[row][column - 1] == "A")) {
+      return false;
+    }
+
     if(column + 1 < crossword.sideLength && (crossword.directionGrid[row][column + 1] == "AD" || crossword.directionGrid[row][column + 1] == "A")) {
       return false;
     }
@@ -39,7 +43,11 @@ function continueTraversal(crossword, row, column, mode) {
       return false;
     }
 
-    if(row + 1 < crossword.sideLength && (crossword.directionGrid[row + 1][column] == "AD" && crossword.directionGrid[row + 1][column] == "A")) {
+    if(row - 1 >= 0 && (crossword.directionGrid[row - 1][column] == "AD" || crossword.directionGrid[row - 1][column] == "A")) {
+      return false;
+    }
+
+    if(row + 1 < crossword.sideLength && (crossword.directionGrid[row + 1][column] == "AD" && crossword.directionGrid[row + 1][column] == "D")) {
       return false;
     }
 
@@ -171,6 +179,7 @@ function downWordSegmenting(crossword, list, index, mode) {
 
 function processSegments(crossword, segments, index, mode) {
   for(const element of segments) {
+    setTimeout(1000);
     chooseRandomWordToInsert(crossword, Object.entries(element), index, mode);
   }
 }
@@ -264,19 +273,19 @@ function setAcrossWordsIntoCrossword(crossword, word, startingIndex, endingIndex
 }
 
 function insertBlackBoxesDown(crossword, startingIndex, endingIndex, column) {
-  if(startingIndex - 1 >= 0) {
+  if(startingIndex - 1 >= 0 && crossword.directionGrid[startingIndex - 1][column] == "N") {
     crossword.setElementIntoGrid(startingIndex - 1, column, "#");
   }
-  if(endingIndex + 1 <= crossword.sideLength - 1) {
+  if(endingIndex + 1 <= crossword.sideLength - 1 && crossword.directionGrid[endingIndex + 1][column] == "N") {
     crossword.setElementIntoGrid(endingIndex + 1, column, "#");
   }
 }
 
 function insertBlackBoxesAcross(crossword, startingIndex, endingIndex, row) {
-  if(startingIndex - 1 >= 0) {
+  if(startingIndex - 1 >= 0 && crossword.directionGrid[row][startingIndex - 1] == "N") {
     crossword.setElementIntoGrid(row, startingIndex - 1, "#");
   }
-  if(endingIndex + 1 <= crossword.sideLength - 1) {
+  if(endingIndex + 1 <= crossword.sideLength - 1 && crossword.directionGrid[row][endingIndex + 1] == "N") {
     crossword.setElementIntoGrid(row, endingIndex + 1, "#");
   }
 }

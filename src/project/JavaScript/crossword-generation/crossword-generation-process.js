@@ -11,7 +11,7 @@ function workOnCrossword(crossword) {
     fillInCrossword(crossword);
 
     crossword.updateProgress();
-    if(crossword.progress >= 0.40) {
+    if(crossword.progress >= 0.50) {
       crossword.setProgress(1)
     }
   }
@@ -52,18 +52,15 @@ function fillInCrossword(crossword) {
   let mode = randomlySelectFillInMode();
 
   if(mode == fillInMode.TOPTOBOTTOM) {
-    console.log("TOP TO BOTTOM")
     fillInTopToBottom(crossword);
   }
   else if(mode == fillInMode.LEFTTORIGHT) {
-    console.log("LEFT TO RIGHT")
-
     fillInLeftToRight(crossword);
   }
-  // else if(mode == fillInMode.RANDOMACROSS) {
-  //   fillInRandomAcross(crossword);
-  // }
-  // else {
-  //   fillInRandomDown(crossword);
-  // }
+  else if(mode == fillInMode.RANDOMACROSS) {
+    fillInRandomAcross(crossword);
+  }
+  else {
+    fillInRandomDown(crossword);
+  }
 }
